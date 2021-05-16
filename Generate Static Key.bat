@@ -9,7 +9,7 @@ if not exist "!OPENVPN_STATIC_KEY!" goto createStaticKey
 echo Static key already exists: !OPENVPN_STATIC_KEY!
 choice /c yn /n /m "Do you wish to overwrite it with a new one? [Y/N]"
 if !errorlevel!==1 goto createStaticKey
-exit /b 4
+exit /b 6
 
 :createStaticKey
 echo Creating new static key: !OPENVPN_STATIC_KEY!

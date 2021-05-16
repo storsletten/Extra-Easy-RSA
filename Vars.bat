@@ -27,13 +27,26 @@ rem Trim trailing backslash
 if %OPENVPN:~-1%==\ set "OPENVPN=%OPENVPN:~0,-1%"
 
 set "EASYRSA=%OPENVPN%\easy-rsa"
+if not exist "%EASYRSA%" (
+ echo Found no easy-rsa folder inside the OpenVPN program folder.
+ echo Please make sure OpenVPN 2.5 or newer is installed with easy-rsa support.
+ pause
+ exit /b 3
+)
+if not exist "%EASYRSA%\bin\sh.exe" (
+ echo It doesn't look like the OpenVPN installation has easy-rsa 3.
+ echo Please make sure OpenVPN 2.5 or newer is installed with easy-rsa support.
+ pause
+ exit /b 4
+)
+
 set "EASYRSA_PKI=%~dp0PKI"
 
 if exist "%EASYRSA_PKI%" goto addToPATH
 echo PKI folder does not exist: %EASYRSA_PKI%
 choice /c yn /n /m "Do you wish to create it now? [Y/N]"
 if %errorlevel%==1 mkdir "%EASYRSA_PKI%"
-if not exist "%EASYRSA_PKI%" exit /b 3
+if not exist "%EASYRSA_PKI%" exit /b 5
 
 :addToPATH
 set "PATH=%OPENVPN%\bin;%EASYRSA%\bin;%PATH%"

@@ -16,38 +16,40 @@ Typically it's located in C:\Program Files\OpenVPN\easy-rsa\vars.example.
 ## Usage
 Launch the EasyRSA Shell by invoking Shell.bat from this package.
 
-To start a fresh PKI:
+### To start a fresh PKI:
 ```sh
 ./easyrsa init-pki
 ```
 
-To build the certificate authority:
+### To build the certificate authority:
 ```sh
 ./easyrsa build-ca nopass
 ```
 Skip the nopass flag if you want the certificate to be password protected.
 
-To build a server certificate:
+### To build a server certificate:
 ```sh
-./easyrsa build-server-full <name> nopass
+./easyrsa build-server-full "name" nopass
 ```
-Replace <name> with whatever you wish the certificate's common name to be.
+Replace "name" with whatever you wish the certificate's common name to be (for example my-home-network).
 Skip the nopass flag if you want the certificate to be password protected.
 
-To build a client certificate:
+### To build a client certificate:
 ```sh
-./easyrsa build-client-full <name> nopass
+./easyrsa build-client-full "name" nopass
 ```
-Replace <name> with whatever you wish the certificate's common name to be.
+Replace "name" with whatever you wish the certificate's common name to be (for example my-work-laptop).
 Skip the nopass flag if you want the certificate to be password protected.
 
-To generate Diffie-Hellman params:
+It is recommended that you build a unique certificate for every device.
+
+### To generate Diffie-Hellman params:
 ```sh
 ./easyrsa gen-dh
 ```
 
-To generate a static key for tls-crypt:
-Invoke the file named Generate Static Key.bat from this package.
+### To generate a static key for tls-crypt:
+Invoke the file named "Generate Static Key.bat" from this package.
 
 ## Disclaimer
 I am NOT affiliated to the Easy-RSA project or the OpenVPN project in any way.

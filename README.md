@@ -1,10 +1,12 @@
 # Extra Easy-RSA 3 on Windows with OpenVPN
-This package makes it extra easy to generate certificates on Windows for use with OpenVPN.
+This package aims to achieve the following :
+- Make it extra easy to quickly set up your own PKI (Public Key Infrastructure).
+- Make the PKI building environment portable-friendly, so that no customization is tied to a specific computer (beyond an OpenVPN installation).
 
 ## Installation
 1. [Download OpenVPN](https://openvpn.net/community-downloads/) 2.5 or newer for Windows.
 2. Make a custom installation of OpenVPN, and make sure Easy-RSA is being installed.
-3. Clone or [download this repo as a zip file](https://github.com/tms88/Extra-Easy-RSA/archive/refs/heads/main.zip).
+3. Clone or [download this repo as a zip file](https://github.com/tms88/Extra-Easy-RSA/archive/refs/heads/main.zip) and put it wherever you prefer (e.g. on a USB stick). By default, this is where your PKI will live.
 
 ## Configuration
 Easy RSA variables can be set in Vars.bat by opening it in a text editor.

@@ -6,7 +6,7 @@ if not !errorlevel!==0 exit /b !errorlevel!
 
 set "OPENVPN_STATIC_KEY=!EASYRSA_PKI!/static.key"
 if not exist "!OPENVPN_STATIC_KEY!" goto createStaticKey
-echo Static key already exists: !EASYRSA_PKI!
+echo Static key already exists: !OPENVPN_STATIC_KEY!
 choice /c yn /n /m "Do you wish to overwrite it with a new one? [Y/N]"
 if !errorlevel!==1 goto createStaticKey
 exit /b 4

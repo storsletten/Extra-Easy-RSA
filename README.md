@@ -48,8 +48,15 @@ It is recommended that you build a unique certificate for every device.
 ./easyrsa gen-dh
 ```
 
-### To generate a static key for tls-crypt:
-Invoke the file named "Generate Static Key.bat" from this package.
+### To generate tls-crypt-v2 server keys:
+Invoke the file named "Generate tls-crypt-v2 server keys.bat" from this package.
+It will create a tls-crypt-v2-server key for each server certificate in your PKI bundle.
+Existing keys will not be overwritten.
+
+### To generate tls-crypt-v2 client keys:
+Invoke the file named "Generate tls-crypt-v2 client keys.bat" from this package.
+It will create a client-server key pair for each client certificate and tls-crypt-v2-server key in your PKI bundle.
+Existing keys will not be overwritten.
 
 ## Disclaimer
 I am NOT affiliated to the Easy-RSA project or the OpenVPN project in any way.

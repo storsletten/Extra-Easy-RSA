@@ -1,6 +1,6 @@
 @echo off
 SETLOCAL EnableDelayedExpansion
-title Generate tls-crypt-v2 server keys
+title Generate tls-crypt-v2 keys
 call Vars.bat
 if not !errorlevel!==0 exit /b !errorlevel!
 
@@ -26,7 +26,7 @@ if not exist "!TLS_CRYPT_V2_SERVERS!" mkdir "!TLS_CRYPT_V2_SERVERS!"
 if not exist "!TLS_CRYPT_V2_SERVERS!" (
  echo Cannot proceed without a tls-crypt-v2-servers folder in !EASYRSA_PKI!
  pause
- exit /b 6
+ exit /b 8
 )
 
 set found=0
@@ -47,7 +47,7 @@ if !found!==0 (
  echo You can build a server certificate with the EasyRSA Shell by typing: easyrsa build-server-full "name" nopass
  echo Replace "name" with the name you want to give the certificate.
  pause
- exit /b 7
+ exit /b 9
 )
 
 set found=0
@@ -70,7 +70,7 @@ if !found!==0 (
  echo You can build a client certificate with the EasyRSA Shell by typing: easyrsa build-client-full "name" nopass
  echo Replace "name" with the name you want to give the certificate.
  pause
- exit /b 7
+ exit /b 10
 )
 
 echo Total created: !created!

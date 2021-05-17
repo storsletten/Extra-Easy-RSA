@@ -58,6 +58,10 @@ It will perform the following tasks:
 
 Existing keys will not be overwritten, so you can safely run this script again after you make new certificates.
 
+### To make key bundles
+Invoke the file "Make key bundles.bat" if you want to automatically create a bundle with necessary files for each client and server.
+These bundles can then be conveniently moved to every device that needs them.
+
 ## Disclaimer
 I am NOT affiliated to the Easy-RSA project or the OpenVPN project in any way.
 I'm merely a user who wanted to try to simplify the process of building a PKI for my OpenVPN servers even further, and I make this package public in hope that others may find it useful too.
